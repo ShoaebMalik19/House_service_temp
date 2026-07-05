@@ -103,6 +103,7 @@ export function ZipChecker({ variant, onValidZip }: ZipCheckerProps) {
       style={{
         marginTop: isHero ? "28px" : "0",
         width: isHero ? "auto" : "100%",
+        maxWidth: "100%",
       }}
       className={isHero ? "zip-checker-hero" : "zip-checker-wizard"}
     >

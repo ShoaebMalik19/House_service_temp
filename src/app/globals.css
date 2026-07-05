@@ -63,12 +63,13 @@
  * BASE STYLES — FIX 1 & 2: Scrolling & Overflow
  * ============================================================================= */
 
-html {
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-  overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--color-background);
   color: var(--color-text);

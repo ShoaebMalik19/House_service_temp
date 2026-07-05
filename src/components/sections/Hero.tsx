@@ -57,6 +57,7 @@ export function Hero() {
       >
         {/* ── FIX 1 — Subtle photo texture layer (construction, 8% opacity) ── */}
         <div
+          className="hero-absolute"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -74,6 +75,7 @@ export function Hero() {
 
         {/* ── FIX 1 — Grid pattern overlay (3% opacity) ── */}
         <div
+          className="hero-absolute"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -88,6 +90,7 @@ export function Hero() {
 
         {/* ── FIX 1 — SVG noise overlay (4%) ── */}
         <div
+          className="hero-absolute"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -101,6 +104,7 @@ export function Hero() {
 
         {/* ── FIX 1 — Enhanced Orb 1: orange, 700px, 0.18 opacity ── */}
         <div
+          className="hero-absolute"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -118,6 +122,7 @@ export function Hero() {
 
         {/* ── FIX 1 — Enhanced Orb 2: blue, 500px, 0.10 opacity ── */}
         <div
+          className="hero-absolute"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -135,6 +140,7 @@ export function Hero() {
 
         {/* ── FIX 1 — New Orb 3: white glow behind photo card, center-right ── */}
         <div
+          className="hero-absolute"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -158,8 +164,6 @@ export function Hero() {
             zIndex: 1,
             maxWidth: "1280px",
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
             alignItems: "center",
             minHeight: "100svh",
             padding: "120px 80px 100px",
@@ -400,10 +404,9 @@ export function Hero() {
               RIGHT SIDE — Photo card stack (desktop only)
           ════════════════════════════════════════════ */}
           <div
-            className="hero-right"
+            className="hero-right hidden md:block"
             style={{
               position: "relative",
-              display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
@@ -443,7 +446,7 @@ export function Hero() {
 
             {/* FIX 2 — Floating review card: bottom:24px (no negative), hidden on mobile */}
             <div
-              className="hidden md:block"
+              className="hidden md:block hero-absolute"
               style={{
                 position: "absolute",
                 bottom: "24px",
@@ -474,6 +477,7 @@ export function Hero() {
 
             {/* Floating jobs counter card — top-right */}
             <div
+              className="hero-absolute"
               style={{
                 position: "absolute",
                 top: "20px",
@@ -507,8 +511,6 @@ export function Hero() {
             zIndex: 20,
             maxWidth: "700px",
             margin: "0 auto",
-            /* FIX 1 — NO marginBottom negative — was causing overlap */
-            padding: "0 20px",
           }}
         >
           <div
@@ -549,9 +551,20 @@ export function Hero() {
 
         {/* ── Responsive overrides ─────────────────────────────────────── */}
         <style>{`
-          @media (max-width: 767px) {
+          @media (min-width: 768px) {
             .hero-grid {
-              grid-template-columns: 1fr !important;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+          @media (max-width: 767px) {
+            .hero-absolute {
+              display: none !important;
+            }
+            .hero-grid {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
               /* FIX 3 — Hero padding tightened */
               padding: 80px 20px 40px !important;
               gap: 0 !important;
@@ -584,7 +597,9 @@ export function Hero() {
               gap: 0 !important;
               align-items: center !important;
               width: calc(100% - 32px) !important;
-              margin: 16px auto !important;
+              margin-left: 16px !important;
+              margin-right: 16px !important;
+              max-width: 100% !important;
             }
             /* FIX 1 — Hide dividers on mobile */
             .hero-stats-bar > div[aria-hidden="true"] {
@@ -616,7 +631,7 @@ export function Hero() {
       </section>
 
       {/* FIX 3 — Mobile ZIP checker moved BELOW stats bar in its own section */}
-      <section className="md:hidden bg-white w-full px-5 py-5 border-b border-gray-100">
+      <section style={{ width: "100%", maxWidth: "100%" }} className="md:hidden bg-white px-5 py-5 border-b border-gray-100">
         <ZipChecker variant="wizard" />
       </section>
     </>
