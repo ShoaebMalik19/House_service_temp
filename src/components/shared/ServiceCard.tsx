@@ -18,7 +18,7 @@ const SERVICE_IMAGES: Record<string, string> = {
   "deck-building":       "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80",
   "basement-finishing":  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80",
   "home-additions":      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=80",
-  "general-repairs":     "https://images.unsplash.com/photo-1581244277943-fe4a9c777540?w=600&q=80",
+  "general-repairs":     "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80",
 };
 
 interface ServiceCardProps {

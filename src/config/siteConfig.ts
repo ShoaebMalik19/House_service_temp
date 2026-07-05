@@ -90,7 +90,7 @@ export const siteConfig: SiteConfig = {
           "Our kitchen remodeling team designs and builds kitchens that work as beautifully as they look. From custom cabinetry and premium countertops to smart storage solutions and modern appliances — we handle every detail. You get a fixed price upfront, a guaranteed completion date, and a kitchen you'll love for decades.",
       },
       image: "https://images.unsplash.com/photo-1556910103-1c02745a872f?w=800&q=80", // REPLACE WITH CLIENT'S REAL KITCHEN PHOTO
-      priceRange: { min: 15000, max: 75000 }, // FIX 4: $15,000 – $75,000
+      priceRange: { min: 8000, max: 45000 }, // FIX 4: realistic mid-market ranges
       faqs: [
         {
           question: "How long does a kitchen remodel take?",
@@ -125,7 +125,7 @@ export const siteConfig: SiteConfig = {
           "We create spa-like bathrooms that combine beauty with function. Custom tile work, walk-in showers, double vanities, heated floors — whatever your vision, we bring it to life with meticulous craftsmanship and a clean, respectful process.",
       },
       image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80", // REPLACE WITH CLIENT'S REAL BATHROOM PHOTO
-      priceRange: { min: 8000, max: 35000 }, // FIX 4: $8,000 – $35,000
+      priceRange: { min: 4500, max: 18000 }, // FIX 4: realistic mid-market ranges
       faqs: [
         {
           question: "How long does a bathroom renovation take?",
@@ -155,7 +155,7 @@ export const siteConfig: SiteConfig = {
           "We build stunning custom decks using premium composite and hardwood materials that last for decades with minimal maintenance. From intimate bistro decks to full outdoor kitchens with built-in seating — we design spaces you'll live in, not just look at.",
       },
       image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80", // REPLACE WITH CLIENT'S REAL DECK PHOTO
-      priceRange: { min: 8000, max: 25000 }, // FIX 4: $8,000 – $25,000
+      priceRange: { min: 5000, max: 18000 }, // FIX 4: realistic mid-market ranges
       faqs: [
         {
           question: "What materials do you recommend?",
@@ -185,7 +185,7 @@ export const siteConfig: SiteConfig = {
           "We transform basements into beautiful, functional living spaces — home theaters, guest suites, home offices, playrooms, or full in-law apartments. We handle moisture management, egress windows, electrical, plumbing, and every finish detail. It's like adding a whole new floor to your home at a fraction of the cost.",
       },
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80", // REPLACE WITH CLIENT'S REAL BASEMENT PHOTO
-      priceRange: { min: 20000, max: 65000 }, // FIX 4: $20,000 – $65,000
+      priceRange: { min: 12000, max: 40000 }, // FIX 4: realistic mid-market ranges
       faqs: [
         {
           question: "Is my basement suitable for finishing?",
@@ -215,7 +215,7 @@ export const siteConfig: SiteConfig = {
           "We design and build home additions that blend seamlessly with your existing architecture — so they look like they were always there. From extra bedrooms and sunrooms to full second-story additions, we manage everything: design, permits, structural engineering, and construction. One team, one point of contact, one guaranteed price.",
       },
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80", // REPLACE WITH CLIENT'S REAL ADDITION PHOTO
-      priceRange: { min: 40000, max: 150000 }, // FIX 4: $40,000 – $150,000
+      priceRange: { min: 25000, max: 90000 }, // FIX 4: realistic mid-market ranges
       faqs: [
         {
           question: "Will an addition match my existing home?",
@@ -244,8 +244,8 @@ export const siteConfig: SiteConfig = {
         solution:
           "Our general repair service handles your entire to-do list in one visit. Drywall, plumbing fixes, door and window repairs, trim work, painting touch-ups — we bring a fully equipped crew and knock it all out. We show up when we say we will, charge what we quote, and guarantee our work.",
       },
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80", // REPLACE WITH CLIENT'S REAL REPAIR PHOTO
-      priceRange: { min: 500, max: 5000 }, // FIX 4: $500 – $5,000
+      image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80", // REPLACE WITH CLIENT'S REAL REPAIR PHOTO
+      priceRange: { min: 150, max: 3500 }, // FIX 4: realistic mid-market ranges
       faqs: [
         {
           question: "Is there a minimum job size?",
