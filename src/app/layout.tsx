@@ -22,8 +22,8 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Summit Builders | Denver's Trusted Home Remodeling Experts",
-  description: "Denver's top-rated remodeling contractor. Kitchen, bathroom, basement, deck, and home additions. Free estimates. Licensed & insured. Call (555) 234-5678.",
+  title: "Summit Builders | Denver's #1 Home Remodeling Experts",
+  description: "Denver's top-rated remodeling contractor. Kitchen, bathroom, basement & deck. Free estimates. Licensed & insured. Call (555) 234-5678.",
   keywords: ["home remodeling", "contractor", "kitchen remodel", "bathroom remodel", "Denver", "deck builder", "home additions"],
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://summitbuilders.com"),
   alternates: {
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Summit Builders",
-    title: "Summit Builders | Denver's Trusted Home Remodeling Experts",
-    description: "Denver's top-rated remodeling contractor. Kitchen, bathroom, basement, deck, and home additions. Free estimates. Licensed & insured. Call (555) 234-5678.",
+    title: "Summit Builders | Denver's #1 Home Remodeling Experts",
+    description: "Denver's top-rated remodeling contractor. Kitchen, bathroom, basement & deck. Free estimates. Licensed & insured. Call (555) 234-5678.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://summitbuilders.com",
     images: [
       {
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Summit Builders | Denver's Trusted Home Remodeling Experts",
-    description: "Denver's top-rated remodeling contractor. Kitchen, bathroom, basement, deck, and home additions. Free estimates. Licensed & insured. Call (555) 234-5678.",
+    title: "Summit Builders | Denver's #1 Home Remodeling Experts",
+    description: "Denver's top-rated remodeling contractor. Kitchen, bathroom, basement & deck. Free estimates. Licensed & insured. Call (555) 234-5678.",
   },
   robots: {
     index: true,
@@ -112,11 +112,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <LocalBusinessSchema />
       </head>
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="flex flex-col antialiased">
         <Navbar />
         <main className="flex-grow pb-20 md:pb-0">{children}</main>
         <Footer />

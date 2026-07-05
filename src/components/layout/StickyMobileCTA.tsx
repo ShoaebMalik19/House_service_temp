@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, FileText } from "lucide-react";
+import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 import { formatPhoneTel } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ export function StickyMobileCTA() {
             background: "#111827",
             color: "white",
             fontSize: "15px",
-            fontWeight: 600,
+            fontWeight: 700,
             textDecoration: "none",
             cursor: "pointer",
             userSelect: "none",
@@ -49,7 +49,7 @@ export function StickyMobileCTA() {
           Call Now
         </a>
 
-        {/* Right 50% — Get Estimate */}
+        {/* Right 50% — Get Estimate (FIX 4: No icon, text only) */}
         <a
           href="#estimate"
           style={{
@@ -57,18 +57,16 @@ export function StickyMobileCTA() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "8px",
             background: "#E8820C",
             color: "white",
             fontSize: "15px",
-            fontWeight: 600,
+            fontWeight: 700,
             textDecoration: "none",
             cursor: "pointer",
             userSelect: "none",
             transition: "all 0.2s ease",
           }}
         >
-          <FileText style={{ width: "18px", height: "18px" }} />
           Get Estimate
         </a>
       </div>

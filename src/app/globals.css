@@ -60,7 +60,7 @@
 }
 
 /* =============================================================================
- * BASE STYLES
+ * BASE STYLES — FIX 1 & 2: Scrolling & Overflow
  * ============================================================================= */
 
 html {
@@ -68,12 +68,18 @@ html {
 }
 
 body {
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* ── Typography Defaults ──────────────────────────────────────────── */

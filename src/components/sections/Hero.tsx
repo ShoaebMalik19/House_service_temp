@@ -332,7 +332,7 @@ export function Hero() {
 
               {/* Secondary */}
               <a
-                href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
+                href={`tel:+1${siteConfig.phone.replace(/\D/g, "")}`}
                 id="hero-cta-call"
                 style={{
                   display: "inline-flex",
@@ -390,8 +390,10 @@ export function Hero() {
               We call back within 2 hours — guaranteed
             </div>
 
-            {/* FIX 3 — ZIP checker in hero (location A) */}
-            <ZipChecker variant="hero" />
+            {/* FIX 3 — ZIP checker in hero (hidden on mobile, moved below) */}
+            <div className="hidden md:block">
+              <ZipChecker variant="hero" />
+            </div>
           </div>
 
           {/* ════════════════════════════════════════════
@@ -550,7 +552,8 @@ export function Hero() {
           @media (max-width: 767px) {
             .hero-grid {
               grid-template-columns: 1fr !important;
-              padding: 100px 20px 40px !important;
+              /* FIX 3 — Hero padding tightened */
+              padding: 80px 20px 40px !important;
               gap: 0 !important;
               min-height: unset !important;
             }
@@ -573,13 +576,15 @@ export function Hero() {
               width: 100% !important;
               white-space: normal !important;
             }
-            /* FIX 1 — Mobile stats bar: 3-col grid, no dividers, 20px/16px padding */
+            /* FIX 1 & 3 — Mobile stats bar: width calc, auto margin, no negative */
             .hero-stats-bar {
               display: grid !important;
               grid-template-columns: 1fr 1fr 1fr !important;
               padding: 20px 16px !important;
               gap: 0 !important;
               align-items: center !important;
+              width: calc(100% - 32px) !important;
+              margin: 16px auto !important;
             }
             /* FIX 1 — Hide dividers on mobile */
             .hero-stats-bar > div[aria-hidden="true"] {
@@ -608,6 +613,11 @@ export function Hero() {
             }
           }
         `}</style>
+      </section>
+
+      {/* FIX 3 — Mobile ZIP checker moved BELOW stats bar in its own section */}
+      <section className="md:hidden bg-white w-full px-5 py-5 border-b border-gray-100">
+        <ZipChecker variant="wizard" />
       </section>
     </>
   );

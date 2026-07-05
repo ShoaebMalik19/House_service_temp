@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star } from "lucide-react";
 import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { siteConfig } from "@/config/siteConfig";
@@ -23,18 +23,6 @@ export function Testimonials() {
         card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
       }
     }
-  };
-
-  const next = () => {
-    const newIndex = (currentIndex + 1) % siteConfig.testimonials.length;
-    scrollToIndex(newIndex);
-  };
-
-  const prev = () => {
-    const newIndex =
-      (currentIndex - 1 + siteConfig.testimonials.length) %
-      siteConfig.testimonials.length;
-    scrollToIndex(newIndex);
   };
 
   return (

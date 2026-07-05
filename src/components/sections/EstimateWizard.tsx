@@ -42,9 +42,8 @@ const WIZARD_STEPS = ["service", "scope", "urgency", "contact"] as const;
 
 export function EstimateWizard() {
   // -1 = ZIP gate, 0..3 = wizard steps
+  // -1 = ZIP gate, 0..3 = wizard steps
   const [currentStep, setCurrentStep] = useState<number>(-1);
-  const [zipPassed, setZipPassed] = useState(false);
-  const [zipValue, setZipValue] = useState("");
   const [zipSuccessFlash, setZipSuccessFlash] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
@@ -67,10 +66,8 @@ export function EstimateWizard() {
 
   // When ZIP is valid: flash success, then advance
   const handleValidZip = (zip: string) => {
-    setZipValue(zip);
     setFormData((prev) => ({ ...prev, zip }));
     setZipSuccessFlash(true);
-    setZipPassed(true);
     setTimeout(() => {
       setCurrentStep(0);
       setZipSuccessFlash(false);

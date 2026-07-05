@@ -3,7 +3,6 @@
 // All interfaces for the central site configuration system.
 // =============================================================================
 
-import { type LucideIcon } from "lucide-react";
 
 /** Navigation link item */
 export interface NavLink {
