@@ -84,7 +84,7 @@ export function BeforeAfterSlider({
     <div className="space-y-3">
       <div
         ref={containerRef}
-        className="relative w-full h-[280px] md:h-[320px] lg:h-[420px] rounded-xl overflow-hidden cursor-col-resize select-none shadow-lg"
+        className="relative w-full h-[260px] md:h-[320px] lg:h-[420px] rounded-xl overflow-hidden cursor-col-resize select-none shadow-lg"
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
         role="slider"
@@ -126,10 +126,10 @@ export function BeforeAfterSlider({
         {/* Slider Line & Handle */}
         <div
           className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10"
-          style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
+          style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)", touchAction: "none" }}
         >
-          {/* Handle */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44px] h-[44px] bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.7)] border border-gray-200 flex items-center justify-center">
+          {/* Handle — touch-action: none for reliable mobile drag */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44px] h-[44px] bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.7)] border border-gray-200 flex items-center justify-center" style={{ touchAction: "none" }}>
             <svg
               width="20"
               height="20"
@@ -157,9 +157,9 @@ export function BeforeAfterSlider({
         </div>
       </div>
 
-      {/* Caption */}
+      {/* Caption — FIX 3: 13px, centered */}
       {caption && (
-        <p className="text-sm text-[var(--color-text-muted)] text-center px-4">
+        <p className="text-[13px] text-[var(--color-text-muted)] text-center px-4">
           {caption}
         </p>
       )}

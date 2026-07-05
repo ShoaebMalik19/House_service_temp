@@ -65,10 +65,10 @@ export function HowItWorks() {
                   </p>
                 </div>
 
-                {/* Mobile connecting line between steps */}
+                {/* Mobile connecting line between steps — FIX 3: orange #E8820C */}
                 {index < siteConfig.howItWorks.length - 1 && (
-                  <div className="lg:hidden flex justify-center my-2">
-                    <div className="w-[2px] h-8 bg-[#E5E7EB]" />
+                  <div className="lg:hidden flex justify-center my-2" style={{ marginLeft: "auto", marginRight: "auto" }}>
+                    <div className="w-[2px] h-8" style={{ background: "#E8820C" }} />
                   </div>
                 )}
               </AnimatedSection>

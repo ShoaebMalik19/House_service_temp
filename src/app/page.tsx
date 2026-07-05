@@ -1,5 +1,4 @@
 import { Hero } from "@/components/sections/Hero";
-import { TrustBar } from "@/components/sections/TrustBar";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -19,9 +18,6 @@ export default function HomePage() {
     <>
       {/* 1. Hero — "What do you do, where, and how do I reach you?" */}
       <Hero />
-
-      {/* 2. Trust Bar — Immediate credibility signals */}
-      <TrustBar />
 
       {/* 3. Services Grid — "Yes, we do what you need" */}
       <ServicesGrid />

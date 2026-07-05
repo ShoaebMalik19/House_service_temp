@@ -180,3 +180,168 @@ h1, h2, h3, h4, h5, h6 {
 .divider-shadow {
   box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 }
+
+/* =============================================================================
+ * MOBILE OPTIMIZATION — FIX 3 + FIX 5
+ * Global mobile pass for all sections
+ * ============================================================================= */
+
+/* FIX 5 — All buttons: cursor, user-select, transition */
+button, a[href], [role="button"] {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+/* FIX 5 — min-height on alternating background sections */
+.bg-\[var\(--color-background-alt\)\] {
+  min-height: 80px;
+}
+
+@media (max-width: 768px) {
+  /* ── FIX 5: Hero — overflow clip fix so stats bar isn't clipped */
+  #hero {
+    overflow: visible !important;
+  }
+
+  /* ── FIX 3: Hero mobile stats bar ── */
+  .hero-stats-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    padding: 16px 12px !important;
+    gap: 0 !important;
+  }
+  .hero-stats-bar > div[style*="text-align: center"] > div:first-child {
+    font-size: 20px !important;
+  }
+  /* Hide stat dividers on mobile */
+  .hero-stats-bar > div[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* ── FIX 3: Service cards — single column, 160px image, p-4 ── */
+  #services .grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Card image height on mobile */
+  [class*="ServiceCard"] .relative.shrink-0,
+  .group .relative.shrink-0 {
+    height: 160px !important;
+  }
+
+  /* ── FIX 3: Why Choose Us — icon+text side by side ── */
+  #why-choose-us .grid,
+  section[aria-label="Why choose us"] .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  section[aria-label="Why choose us"] [class*="flex gap-5"] {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 16px !important;
+    border-radius: 12px !important;
+    background: #F9FAFB !important;
+  }
+
+  /* ── FIX 3: How It Works — single column ── */
+  section[aria-label="How it works"] .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── FIX 3: Estimate Wizard ── */
+  #estimate {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  #estimate .bg-white.rounded-\[16px\],
+  #estimate .bg-white.rounded-\[20px\] {
+    border-radius: 16px !important;
+    padding: 24px !important;
+    padding-bottom: 32px !important;
+  }
+  #estimate .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── FIX 3: Before/After gallery — single column ── */
+  #gallery .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── FIX 3: Testimonials — single column, full width ── */
+  #testimonials .grid {
+    grid-template-columns: 1fr !important;
+  }
+  #testimonials .md\:col-span-2 {
+    grid-column: span 1 !important;
+  }
+
+  /* ── FIX 3: Service Area — text top, map below ── */
+  section[aria-label="Service area coverage"] .grid {
+    grid-template-columns: 1fr !important;
+  }
+  section[aria-label="Service area coverage"] iframe {
+    height: 250px !important;
+    border-radius: 12px !important;
+  }
+  section[aria-label="Service area coverage"] .inline-flex.items-center {
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* ── FIX 3: Final CTA ── */
+  section[aria-label="Get started"] h2 {
+    font-size: 28px !important;
+    text-align: center !important;
+  }
+  section[aria-label="Get started"] a[href^="tel"] {
+    font-size: 24px !important;
+  }
+  section[aria-label="Get started"] .flex.flex-col {
+    width: 100% !important;
+  }
+
+  /* ── FIX 3: Footer — single column ── */
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  footer .pt-8 {
+    margin-top: 24px !important;
+    padding-top: 24px !important;
+  }
+  footer h3 {
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #9CA3AF !important;
+  }
+  footer a, footer span, footer li {
+    font-size: 15px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+  footer .flex.justify-center {
+    margin-top: 16px !important;
+    gap: 20px !important;
+  }
+  footer .container-custom.py-6 {
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+
+  /* ── FIX 5: Minimum font size enforcement — nothing below 14px ── */
+  p, span, div, li, a, button, label, input, select, textarea {
+    min-font-size: 14px;
+  }
+
+  /* ── FIX 4: Page bottom padding so sticky bar doesn't hide content ── */
+  main {
+    padding-bottom: 64px !important;
+  }
+}
+

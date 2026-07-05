@@ -1,63 +1,77 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Phone, FileText } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/siteConfig";
 import { formatPhoneTel } from "@/lib/utils";
 
 // =============================================================================
-// StickyMobileCTA — Fixed bottom bar on mobile viewports
-// Appears after scrolling past the hero. Two large tap targets:
-// "📞 Call Now" and "Get Estimate"
+// StickyMobileCTA — FIX 4: always visible on mobile (no scroll trigger),
+// two halves: Call (#111827) | Get Estimate (#E8820C)
+// Safe-area padding for iPhone home bar. desktop hidden (md:hidden).
 // =============================================================================
 
 export function StickyMobileCTA() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show after scrolling past ~500px (roughly past the hero)
-      setIsVisible(window.scrollY > 500);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
+    <div
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50"
+      style={{
+        boxShadow: "0 -4px 20px rgba(0,0,0,0.15)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          height: "64px",
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
+      >
+        {/* Left 50% — Call Now */}
+        <a
+          href={`tel:${formatPhoneTel(siteConfig.phone)}`}
+          style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+            background: "#111827",
+            color: "white",
+            fontSize: "15px",
+            fontWeight: 600,
+            textDecoration: "none",
+            cursor: "pointer",
+            userSelect: "none",
+            transition: "all 0.2s ease",
+          }}
         >
-          {/* Safe area padding for notched devices */}
-          <div className="bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.12)] px-4 py-2 h-[64px] pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center box-content">
-            <div className="flex gap-3 w-full h-full">
-              {/* Call Now */}
-              <a
-                href={`tel:${formatPhoneTel(siteConfig.phone)}`}
-                className="flex-1 flex items-center justify-center gap-2 bg-[#111827] text-white font-semibold rounded-lg transition-colors min-h-[48px]"
-              >
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
+          <Phone style={{ width: "18px", height: "18px" }} />
+          Call Now
+        </a>
 
-              {/* Get Estimate */}
-              <a
-                href="#estimate"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#E8820C] text-white font-semibold rounded-lg transition-colors hover:bg-opacity-90 min-h-[48px]"
-              >
-                <FileText className="w-5 h-5" />
-                Get Estimate
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        {/* Right 50% — Get Estimate */}
+        <a
+          href="#estimate"
+          style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+            background: "#E8820C",
+            color: "white",
+            fontSize: "15px",
+            fontWeight: 600,
+            textDecoration: "none",
+            cursor: "pointer",
+            userSelect: "none",
+            transition: "all 0.2s ease",
+          }}
+        >
+          <FileText style={{ width: "18px", height: "18px" }} />
+          Get Estimate
+        </a>
+      </div>
+    </div>
   );
 }
